@@ -1,0 +1,33 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: NMOS_pass_t
+* View Name:     schematic
+* Netlisted on:  Apr  3 22:33:12 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    NMOS_pass_t
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NMOS_pass_t CLK IN OUT VSS
+*.PININFO CLK:I IN:I VSS:I OUT:O
+MM0 IN CLK OUT VSS N_18 W=1u L=180.00n
+.ENDS
+

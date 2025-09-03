@@ -1,0 +1,29 @@
+************************************************************************
+* Library Name: mylib
+* Cell Name:    nand6
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT nand6 A B C D E F OUT VDD VSS
+*.PININFO A:I B:I C:I CLK:I D:I VDD:I VSS:I OUT:O
+
+MM0 net0 A VSS VSS n_18 W=1u L=180.00n
+MM1 net1 B net0 VSS n_18 W=1u L=180.00n
+MM2 netx C net1 VSS n_18 W=1u L=180.00n
+MM3 netx A VDD VDD p_18 W=1.7u L=180.00n
+MM6 netx B VDD VDD p_18 W=1.7u L=180.00n
+MM7 netx C VDD VDD p_18 W=1.7u L=180.00n
+
+MM8 net2 D VSS VSS n_18 W=1u L=180.00n
+MM9 net3 E net2 VSS n_18 W=1u L=180.00n
+MM10 nety F net3 VSS n_18 W=1u L=180.00n
+MM11 nety F VDD VDD p_18 W=1.7u L=180.00n
+MM12 nety E VDD VDD p_18 W=1.7u L=180.00n
+MM13 nety D VDD VDD p_18 W=1.7u L=180.00n
+
+MM14 OUT netx VSS VSS n_18 W=2u L=180.00n
+MM15 OUT nety VSS VSS n_18 W=2u L=180.00n
+MM16 net4 netx VDD VDD p_18 W=3.4u L=180.00n
+MM17 OUT nety net4 VDD p_18 W=3.4u L=180.00n
+.ENDS
+

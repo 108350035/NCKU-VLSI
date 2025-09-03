@@ -1,0 +1,5 @@
+*inv
+.subckt INV IN OUT VDD VSS
+MM0 OUT IN VSS VSS n_18 w=0.94u l=0.18u
+MM1 OUT IN VDD VDD p_18 w=3u l=0.18u
+.ends

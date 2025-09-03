@@ -1,0 +1,49 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: FF
+* View Name:     schematic
+* Netlisted on:  Apr 27 21:56:07 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    D_Latch
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT FF EN ~EN D Q VDD VSS
+MM0 D EN net0 VDD p_18 W=1.5u L=180.00n
+MM1 D ~EN net0 VSS n_18 W=1.5u L=180.00n
+MM2 net1 net0 VDD VDD p_18 W=1u L=180.00n
+MM3 net1 net0 VSS VSS n_18 W=0.5u L=180.00n
+MM4 net2 net1 VDD VDD p_18 W=1u L=180.00n
+MM5 net2 net1 VSS VSS n_18 W=0.5u L=180.00n
+MM6 net2 ~EN net0 VDD p_18 W=1.5u L=180.00n
+MM7 net2 EN net0 VSS n_18 W=1.5u L=180.00n
+
+MM10 net1 ~EN net3 VDD p_18 W=1.5u L=180.00n
+MM11 net1 EN net3 VSS n_18 W=1.5u L=180.00n
+MM12 Q net3 VDD VDD p_18 W=1u L=180.00n
+MM13 Q net3 VSS VSS n_18 W=0.5u L=180.00n
+MM14 ~Q Q VDD VDD p_18 W=1u L=180.00n
+MM15 ~Q Q VSS VSS n_18 W=0.5u L=180.00n
+MM16 ~Q EN net3 VDD p_18 W=1.5u L=180.00n
+MM17 ~Q ~EN net3 VSS n_18 W=1.5u L=180.00n
+
+.ENDS
+

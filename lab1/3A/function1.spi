@@ -1,0 +1,40 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: Function_1
+* View Name:     schematic
+* Netlisted on:  Apr  6 12:08:02 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    Function_1
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT Function_1 A B C D OUT VDD VSS
+*.PININFO A:I B:I C:I D:I VDD:I VSS:I OUT:O
+MM3 OUT D VSS VSS n_18 W=500.0n L=180.00n
+MM2 net21 A VSS VSS n_18 W=500.0n L=180.00n
+MM1 net22 B net21 VSS n_18 W=500.0n L=180.00n
+MM0 OUT C net22 VSS n_18 W=500.0n L=180.00n
+MM7 OUT D net13 VDD p_18 W=1u L=180.00n
+MM6 net13 C VDD VDD p_18 W=1u L=180.00n
+MM5 net13 B VDD VDD p_18 W=1u L=180.00n
+MM4 net13 A VDD VDD p_18 W=1u L=180.00n
+.ENDS
+

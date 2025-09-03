@@ -1,0 +1,50 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: D_FF
+* View Name:     schematic
+* Netlisted on:  Apr  5 13:27:20 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    D_FF
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT D_FF clk D Q VDD VSS ~QM
+*.PININFO clk:I D:I VDD:I VSS:I Q:O ~QM:O
+MM16 net102 clk net99 VDD p_18 W=1u L=180.00n
+MM15 net102 Q VDD VDD p_18 W=1u L=180.00n
+MM13 Q net99 VDD VDD p_18 W=1u L=180.00n
+MM6 net99 ~clk ~QM VDD p_18 W=1u L=180.00n
+MM9 net92 ~clk net89 VDD p_18 W=1u L=180.00n
+MM8 net92 ~QM VDD VDD p_18 W=1u L=180.00n
+MM5 ~clk clk VDD VDD p_18 W=1u L=180.00n
+MM2 ~QM net89 VDD VDD p_18 W=1u L=180.00n
+MM0 net89 clk D VDD p_18 W=1u L=180.00n
+MM17 net99 ~clk net102 VSS n_18 W=1u L=180.00n
+MM14 net102 Q VSS VSS n_18 W=500.0n L=180.00n
+MM12 ~QM clk net99 VSS n_18 W=1u L=180.00n
+MM11 Q net99 VSS VSS n_18 W=500.0n L=180.00n
+MM10 net89 clk net92 VSS n_18 W=1u L=180.00n
+MM7 net92 ~QM VSS VSS n_18 W=500.0n L=180.00n
+MM4 ~clk clk VSS VSS n_18 W=0.5u L=180.00n
+MM1 D ~clk net89 VSS n_18 W=1u L=180.00n
+MM3 ~QM net89 VSS VSS n_18 W=500.0n L=180.00n
+.ENDS
+

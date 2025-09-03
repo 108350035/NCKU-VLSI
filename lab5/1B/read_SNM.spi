@@ -1,0 +1,14 @@
+************************************************************************
+* Library Name: mylib
+* Cell Name:    read_SNM
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT read_SNM V1 V2 VDD VSS
+
+MM1 V2 V1 VDD VDD p_18 W=0.95u L=180.00n
+MM3 V2 V1 VSS VSS n_18 W=0.47u L=180.00n
+MM5 V2 VDD VDD VSS n_18 W=0.5u L=180.00n
+
+.ENDS
+

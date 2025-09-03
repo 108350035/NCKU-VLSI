@@ -1,0 +1,16 @@
+************************************************************************
+* Library Name: mylib
+* Cell Name:    write_SNM
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT write_SNM V1 V2 VDD VSS
+MM0 V2 V1 VDD VDD p_18 W=0.95u L=180.00n
+MM1 V2 V1 VSS VSS n_18 W=0.47u L=180.00n
+MM2 VDD VDD V2 VSS n_18 W=0.5u L=180.00n
+
+MM3 V1 V2 VDD VDD p_18 W=0.95u L=180.00n
+MM4 V1 V2 VSS VSS n_18 W=0.47u L=180.00n
+MM5 V1 VDD VSS VSS n_18 W=0.5u L=180.00n
+.ENDS
+

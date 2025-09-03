@@ -1,0 +1,50 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: mux_2to1_1
+* View Name:     schematic
+* Netlisted on:  Apr  5 21:36:15 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    mux_2to1_1
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT mux_2to1_1 A0 A1 OUT S VDD VSS
+*.PININFO A0:I A1:I S:I VDD:I VSS:I OUT:O
+MM22 OUT net039 VDD VDD p_18 W=1u L=180.00n m=1
+MM14 net039 net052 VDD VDD p_18 W=1u L=180.00n m=1
+MM16 ~S S VDD VDD p_18 W=1u L=180.00n m=1
+MM20 net052 net54 VDD VDD p_18 W=1u L=180.00n
+MM19 net052 net42 VDD VDD p_18 W=1u L=180.00n
+MM5 net42 S VDD VDD p_18 W=1u L=180.00n
+MM4 net42 A1 VDD VDD p_18 W=1u L=180.00n
+MM1 net54 ~S VDD VDD p_18 W=1u L=180.00n
+MM0 net54 A0 VDD VDD p_18 W=1u L=180.00n
+MM13 net039 net052 VSS VSS n_18 W=500.0n L=180.00n m=1
+MM21 OUT net039 VSS VSS n_18 W=500.0n L=180.00n m=1
+MM15 ~S S VSS VSS n_18 W=500.0n L=180.00n m=1
+MM18 net052 net54 net055 VSS n_18 W=500.0n L=180.00n
+MM17 net055 net42 VSS VSS n_18 W=500.0n L=180.00n
+MM7 net63 A1 VSS VSS n_18 W=500.0n L=180.00n
+MM6 net42 S net63 VSS n_18 W=500.0n L=180.00n
+MM3 net64 A0 VSS VSS n_18 W=500.0n L=180.00n
+MM2 net54 ~S net64 VSS n_18 W=500.0n L=180.00n
+.ENDS
+

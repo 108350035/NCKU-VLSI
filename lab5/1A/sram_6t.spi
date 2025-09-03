@@ -1,0 +1,81 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: 6t_sram
+* View Name:     schematic
+* Netlisted on:  Apr 25 09:24:13 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    AND3
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT AND3 A CLK EN OUT VDD VSS
+*.PININFO A:I CLK:I EN:I VDD:I VSS:I OUT:O
+MM14 OUT net36 VSS VSS n_18 W=0.47u L=180.00n
+MM13 net36 A net37 VSS n_18 W=470.00n L=180.00n
+MM12 net37 CLK VSS VSS n_18 W=470.00n L=180.00n
+MM18 OUT net36 VDD VDD p_18 W=0.95u L=180.00n
+MM17 net36 EN VDD VDD p_18 W=1u L=180.00n
+MM16 net36 CLK VDD VDD p_18 W=470.00n L=180.00n
+MM15 net36 A VDD VDD p_18 W=470.00n L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: NTHU_project
+* Cell Name:    NOR2
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT NOR2 A B OUT VDD VSS
+*.PININFO A:I B:I VDD:I VSS:I OUT:O
+MM1 OUT B VSS VSS n_18 W=470.0n L=180.00n
+MM0 OUT A VSS VSS n_18 W=470.0n L=180.00n
+MM3 net19 A VDD VDD p_18 W=1.91u L=180.00n
+MM2 OUT B net19 VDD p_18 W=1.91u L=180.00n
+.ENDS
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    6t_sram
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT sram_6t clk D RE VDD VSS WE
+*.PININFO clk:I D:I RE:I VDD:I VSS:I WE:I
+MM11 ~clk clk VDD VDD p_18 W=2u L=180.00n
+MM18 ~D D VDD VDD p_18 W=2u L=180.00n
+MM9 BL CLK VDD VDD p_18 W=0.5u L=180.00n
+MM8 BLB CLK VDD VDD p_18 W=0.5u L=180.00n
+MM1 QB Q VDD VDD p_18 W=0.95u L=180.00n
+MM0 Q QB VDD VDD p_18 W=0.95u L=180.00n
+MM10 ~clk clk VSS VSS n_18 W=1u L=180.00n
+MM14 ~D D VSS VSS n_18 W=1u L=180.00n
+MM7 BLB net25 VSS VSS n_18 W=3u L=180.00n
+MM6 BL net21 VSS VSS n_18 W=3u L=180.00n
+MM5 QB net015 BLB VSS n_18 W=0.5u L=180.00n
+MM4 Q net015 BL VSS n_18 W=0.5u L=180.00n
+MM3 QB Q VSS VSS n_18 W=0.47u L=180.00n
+MM2 Q QB VSS VSS n_18 W=0.47u L=180.00n
+XI1 D WE CLK net25 VDD VSS / AND3
+XI0 ~D WE CLK net21 VDD VSS / AND3
+XI3 WE RE net040 VDD VSS / NOR2
+XI2 ~clk net040 net015 VDD VSS / NOR2
+.ENDS
+

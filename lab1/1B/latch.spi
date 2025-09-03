@@ -1,0 +1,42 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: D_Latch
+* View Name:     schematic
+* Netlisted on:  Apr  5 11:58:18 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    D_Latch
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT D_Latch clk D Q VDD VSS ~Q
+*.PININFO clk:I D:I VDD:I VSS:I Q:O ~Q:O
+MM9 net013 clk Q VDD p_18 W=1u L=180.00n
+MM8 net013 ~Q VDD VDD p_18 W=1u L=180.00n
+MM5 ~clk clk VDD VDD p_18 W=1u L=180.00n
+MM2 ~Q Q VDD VDD p_18 W=1u L=180.00n
+MM0 Q ~clk D VDD p_18 W=1u L=180.00n
+MM10 Q ~clk net013 VSS n_18 W=1u L=180.00n
+MM7 net013 ~Q VSS VSS n_18 W=500.0n L=180.00n
+MM4 ~clk clk VSS VSS n_18 W=500.0n L=180.00n
+MM1 D clk Q VSS n_18 W=1u L=180.00n
+MM3 ~Q Q VSS VSS n_18 W=500.0n L=180.00n
+.ENDS
+

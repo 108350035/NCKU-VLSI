@@ -1,0 +1,42 @@
+* File: A3.pex.spi
+* Created: Sat Apr 12 12:16:46 2025
+* Program "Calibre xRC"
+* Version "v2019.3_15.11"
+* 
+.include "A3.pex.spi.pex"
+.subckt A3  A OUT B C D VSS E VDD
+* 
+* VDD	VDD
+* E	E
+* VSS	VSS
+* D	D
+* C	C
+* B	B
+* OUT	OUT
+* A	A
+MM4 N_OUT_MM4_d N_A_MM4_g N_noxref_8_MM4_s N_VSS_MM4_b N_18 L=1.8e-07 W=1e-06
++ AD=4.9e-13 AS=2.55e-13 PD=1.98e-06 PS=5.1e-07
+MM0 N_noxref_8_MM0_d N_B_MM0_g N_VSS_MM0_s N_VSS_MM4_b N_18 L=1.8e-07 W=1e-06
++ AD=2.55e-13 AS=2.55e-13 PD=5.1e-07 PS=5.1e-07
+MM1 N_noxref_8_MM1_d N_C_MM1_g N_VSS_MM1_s N_VSS_MM4_b N_18 L=1.8e-07 W=1e-06
++ AD=2.55e-13 AS=2.55e-13 PD=5.1e-07 PS=5.1e-07
+MM2 N_noxref_8_MM2_d N_D_MM2_g N_VSS_MM2_s N_VSS_MM4_b N_18 L=1.8e-07 W=1e-06
++ AD=2.55e-13 AS=2.55e-13 PD=5.1e-07 PS=5.1e-07
+MM3 N_noxref_8_MM3_d N_E_MM3_g N_VSS_MM3_s N_VSS_MM4_b N_18 L=1.8e-07 W=1e-06
++ AD=4.9e-13 AS=2.55e-13 PD=1.98e-06 PS=5.1e-07
+MM5 N_OUT_MM5_d N_A_MM5_g N_VDD_MM5_s N_VDD_MM5_b P_18 L=1.8e-07 W=3e-06
++ AD=1.47e-12 AS=1.47e-12 PD=3.98e-06 PS=3.98e-06
+MM6 N_OUT_MM6_d N_B_MM6_g N_noxref_10_MM6_s N_VDD_MM5_b P_18 L=1.8e-07 W=1.2e-05
++ AD=5.88e-12 AS=3.06e-12 PD=1.298e-05 PS=5.1e-07
+MM7 N_noxref_10_MM7_d N_C_MM7_g N_noxref_11_MM7_s N_VDD_MM5_b P_18 L=1.8e-07
++ W=1.2e-05 AD=3.06e-12 AS=3.06e-12 PD=5.1e-07 PS=5.1e-07
+MM8 N_noxref_11_MM8_d N_D_MM8_g N_noxref_12_MM8_s N_VDD_MM5_b P_18 L=1.8e-07
++ W=1.2e-05 AD=3.06e-12 AS=3.06e-12 PD=5.1e-07 PS=5.1e-07
+MM9 N_noxref_12_MM9_d N_E_MM9_g N_VDD_MM9_s N_VDD_MM5_b P_18 L=1.8e-07 W=1.2e-05
++ AD=3.06e-12 AS=5.88e-12 PD=5.1e-07 PS=1.298e-05
+*
+.include "A3.pex.spi.A3.pxi"
+*
+.ends
+*
+*

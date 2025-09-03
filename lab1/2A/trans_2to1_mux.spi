@@ -1,0 +1,38 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: trans_2to1_mux
+* View Name:     schematic
+* Netlisted on:  Apr  5 15:01:18 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    trans_2to1_mux
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT trans_2to1_mux D0 D1 S VDD VSS Y
+*.PININFO D0:I D1:I S:I VDD:I VSS:I Y:O
+MM4 ~S S VSS VSS n_18 W=500.0n L=180.00n
+MM1 D1 S Y VSS n_18 W=1u L=180.00n
+MM0 D0 ~S Y VSS n_18 W=1u L=180.00n
+MM5 ~S S VDD VDD p_18 W=1u L=180.00n
+MM3 Y S D0 VDD p_18 W=1u L=180.00n
+MM2 Y ~S D1 VDD p_18 W=1u L=180.00n
+.ENDS
+

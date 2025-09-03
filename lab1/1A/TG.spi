@@ -1,0 +1,36 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  mylib
+* Top Cell Name: TG
+* View Name:     schematic
+* Netlisted on:  Apr  3 22:54:01 2025
+************************************************************************
+
+*.BIPOLAR
+*.RESI = 2000 
+*.RESVAL
+*.CAPVAL
+*.DIOPERI
+*.DIOAREA
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: mylib
+* Cell Name:    TG
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT TG clk IN OUT VDD VSS
+*.PININFO clk:I IN:I VDD:I VSS:I OUT:O
+MM2 ~clk clk VDD VDD p_18 W=1u L=180.00n
+MM0 OUT ~clk IN VDD p_18 W=1u L=180.00n
+MM3 ~clk clk VSS VSS n_18 W=1u L=180.00n
+MM1 IN clk OUT VSS n_18 W=1u L=180.00n
+.ENDS
+
