@@ -76,17 +76,14 @@ D=9.72
 
 ## 2B
 
-1.
-NAND3+NOR2:
+1.NAND3+NOR2:
 before       after      post
 1.933 e-10  1.706e-10 
 
-2.
-NAND2+NOR3:
+2.NAND2+NOR3:
 before     after
 1.421e-10 1.438e-10
 
-3.
-NAND3+NOR2:
+3.NAND3+NOR2:
 before        after      post
 1.268e-10     1.216e-10 1.251e-10
